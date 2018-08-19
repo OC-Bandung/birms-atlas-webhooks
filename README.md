@@ -44,9 +44,9 @@ Examples:
 
 `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/find-releases?secret=[secret]&q={"tender.value.amount":{"$exists":true}}&limit=50`
 
-### Get the releases in the system that have non-empty `tender.value.amount` 
-property and limit results to 2 per page, but start from the second page. We know for the 
-last page the internal MongoDB `_id` property of the last document was `5b7528ecb7d7c3728366810f`.
+### Get the releases in the system that have non-empty `tender.value.amount` property and limit results to 2 per page, but start from the second page. 
+
+We know for the first page, the internal MongoDB `_id` property of the last document was `5b7528ecb7d7c3728366810f`.
 
 `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/find-releases?secret=[secret]&q={"tender.value.amount":{"$exists":true}}&limit=2&fromId=5b7528ecb7d7c3728366810f`
 
