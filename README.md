@@ -8,7 +8,7 @@ This key will be provided on demand by the Bandung OC team.
 
 ## Get release by ocid
 
-`/https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/get-by-ocid?secret=[secret]&ocid=[ocid]`
+`https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/get-by-ocid?secret=[secret]&ocid=[ocid]`
 
 Get one OCDS release document for the release with the given `ocid`. 
 
