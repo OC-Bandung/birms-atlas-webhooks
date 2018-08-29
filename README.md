@@ -64,3 +64,8 @@ Examples:
 ### Count the releases in the system that have non-empty `tender.value.amount` 
 
 `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/count-releases?secret=[secret]&q={"tender.value.amount":{"$exists":true}}`
+
+## Find errors during data import
+
+`https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/find-errors?secret=[secret]`
+
