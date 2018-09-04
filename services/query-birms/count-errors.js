@@ -1,7 +1,7 @@
 exports = function (payload, response) {
 
     const mongodb = context.services.get("mongodb-atlas");
-    const releases = mongodb.db("birms").collection("count");
+    const releases = mongodb.db("birms").collection("error");
     var q = payload.query.q || '{}';
     response.setHeader('content-type', 'text/plain');
 
