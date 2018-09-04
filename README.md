@@ -69,3 +69,6 @@ Examples:
 
 `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/find-errors?secret=[secret]`
 
+## Count errors during data import
+
+`https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/count-errors?secret=[secret]`
