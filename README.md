@@ -10,13 +10,21 @@ This key will be provided on demand by the Bandung OC team.
 
 `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/get-by-ocid?secret=[secret]&ocid=[ocid]`
 
-Get one OCDS release document for the release with the given `ocid`. 
+Get one OCDS release document for the release with the given `ocid`.
 
 Example:
 
 ### Gets the release with ocid `ocds-afzrfb-s-2016-5043143`
 
-`https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/get-by-ocid?secret=[secret]&ocid=ocds-afzrfb-s-2016-5043143`
+## Get release package by ocid
+
+`https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/get-release-package-by-ocid?secret=[secret]&ocid=[ocid]` 
+
+Example
+
+### Gets the release package with ocid `ocds-afzrfb-s-2016-5043143` 
+
+`https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/get-release-package-by-ocid?secret=[secret]&ocid=ocds-afzrfb-s-2016-5043143`
 
 ## Find releases using an optional MongoDB query and pagination.
 
@@ -49,6 +57,21 @@ Examples:
 We know for the first page, the internal MongoDB `_id` property of the last document was `5b7528ecb7d7c3728366810f`.
 
 `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/find-releases?secret=[secret]&q={"tender.value.amount":{"$exists":true}}&limit=2&fromId=5b7528ecb7d7c3728366810f`
+
+## Find release packages using an optional MongoDB query and pagination.
+
+This is very similar to the previous option but it will search release packages instead. Careful here, if you want to narrow down the search by using
+release filters, remember packages are wrapping releases into a releases[] array. So all your queries will have to start with `releases.`.
+
+Example, this will find the release packages with a custom query:
+
+`https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/find-release-packages?secret=[secret]&q={"releases.ocid":"ocds-afzrfb-s-2016-5022700"}`
+
+## Get the release package by ocid
+
+This will return the release package by the ocid of the wrapped release
+
+` https://webhooks.mongodb-stitch.com/api/client/v2.0/app/birms-cvrbm/service/query-birms/incoming_webhook/get-release-package-by-ocid?secret=[secret]&ocid=ocds-afzrfb-s-2016-5022700`
 
 ## Count releases using an optional MongoDB query
 
